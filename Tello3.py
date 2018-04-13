@@ -3,6 +3,9 @@ import pygame
 from time import sleep
 import threading
 
+WHITE = (255, 64, 64)
+BLACK = (0, 0, 0)
+
 # Create a UDP socket
 sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
 tello_address = ('192.168.10.1', 8889)
@@ -132,8 +135,7 @@ def create_main_window():
     pygame.font.init()
     myfont = pygame.font.SysFont('Comic Sans MS', 20)
 
-    white = (255, 64, 64)
-    screen.fill((white))
+    screen.fill((WHITE))
 
     img = pygame.image.load('images/arrow.jpg')
     screen.blit(img, (210, 250))
@@ -142,26 +144,26 @@ def create_main_window():
     img = pygame.transform.scale(img, (100, 100))
     screen.blit(img, (100, 200))
 
-    forward = myfont.render("A", False, (0, 0, 0))
+    forward = myfont.render("A", False, BLACK)
     screen.blit(forward, (145, 235))
 
     img = pygame.image.load('images/counterclockwise.png')
     img = pygame.transform.scale(img, (100, 100))
     screen.blit(img, (420, 200))
 
-    forward = myfont.render("D", False, (0, 0, 0))
+    forward = myfont.render("D", False, BLACK)
     screen.blit(forward, (465, 235))
 
-    forward = myfont.render('Forward', False, (0, 0, 0))
+    forward = myfont.render('Forward', False, BLACK)
     screen.blit(forward, (275, 255))
 
-    forward = myfont.render('Back', False, (0, 0, 0))
+    forward = myfont.render('Back', False, BLACK)
     screen.blit(forward, (290, 415))
 
-    forward = myfont.render('Left', False, (0, 0, 0))
+    forward = myfont.render('Left', False, BLACK)
     screen.blit(forward, (160, 370))
 
-    forward = myfont.render('Right', False, (0, 0, 0))
+    forward = myfont.render('Right', False, BLACK)
     screen.blit(forward, (415, 370))
 
     pygame.display.flip()
